@@ -1,0 +1,77 @@
+\documentclass[a4paper,11pt,draft,twoside]{amsart}
+\usepackage[english]{babel}
+\usepackage[margin=3cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[sorting=none]{biblatex}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage[textfont={small,it},labelfont=bf,labelsep=endash]{caption}
+\usepackage[table]{xcolor}
+\usepackage{eurosym}
+\usepackage{color}
+\usepackage{verbatim}
+\usepackage[toc,page]{appendix}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{caption} % command for excluding labels in figures and tables
+\usepackage{float} % forced position of figures/tables etc.
+\usepackage{multicol}	% allow multi column environemnt
+\usepackage{acronym}
+\usepackage{titling}
+\usepackage[pdfstartview=FitH,pdfborder={0 0 0},pdftitle={ESATAN report},bookmarks,pdfauthor={Omair Sarwar, Morten Olsen}]{hyperref}
+\usepackage{bibcheck}
+\usepackage{memhfixc}
+
+\bibliography{references}
+
+\def\doctitle{GIPER Ganymede Ice PEnetrating Radar}
+\def\docsubtitle{Part I: Instrument Scientific and Technical Plan}
+\def\docversion{1}
+\def\docreference{GIPER-ScTch-01}
+
+
+\fancyhead{}
+\fancyhead[RO]{\slshape \today}
+\fancyhead[RE]{\slshape Doc. version: \docversion}
+\fancyhead[LO,LE]{\slshape \doctitle}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyhfoffset{1cm}
+\addtolength{\headheight}{1cm}
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+
+\begin{document}
+
+\pagestyle{plain}
+\pagenumbering{roman}
+
+\input{titlepage}
+
+\include{acronyms}
+
+\input{approval_change_record}
+
+\newpage
+\tableofcontents
+
+\acresetall	%reset acronyms which is otherwise used in list of figures or tables
+\clearpage %reset page numbers
+\pagenumbering{arabic}
+%\pagestyle{headings}
+\pagestyle{fancy}
+
+
+\input{background}
+
+\newpage
+\printbibliography
+
+\newgeometry{margin=1.5cm}
+\pagestyle{plain}
+
+\input{appendices}
+
+\end{document}
