@@ -7,3 +7,6 @@
 /Report/*.xml
 /Report/*.toc
 /Report/SI_project_proposal-blx.bib
+/Figures/
+*.lyx*
+*~
