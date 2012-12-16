@@ -34,6 +34,8 @@ The proposed instrument has been designed in accordance to ESA \ac{EID-A} for th
 %thermal, power, mechanical mounting, EMC, especially radiation sensitive parts, radiation shielding and mitigation strategy, flight heritage of hardware, ressource budgets, 
 This mission assumes that an altimeter instrument is included in the JUICE mission scientific instrument package. Altimeter is needed to estimate the surface clutter and surface slope.
 %
+The instrument consortia will provide an Instrument Operation Manual.
+%
 \section{Summary of Instrument Interfaces}
 %data, mechanical, power, EMC, thermal,
 %
@@ -46,6 +48,7 @@ Functional, EMC, Thermal-Vacuum, Vibration.
 For \ac{EGSE} a \ac{GIPER} raw signal simulator will be developed by the instrument consortia. The raw signal simulator will be similar to the one developed for the \ac{SHARAD} instrument\cite{Giovanni} and allow testing of the signal processing chain and to develop a Ganymede transfer function considering the orbit altitude and surface clutter and sub-surface dielectric interfaces. 
 %
 %
+A set of calibration files and algorithms will be send to the JUICE \ac{SOC} for the raw to L1b data processing.
 \begin{wrapfigure}{r}{0.3\textwidth}
 \centering
 \includegraphics[width=0.27\textwidth]{figures/MEGS}
@@ -59,15 +62,40 @@ In-flight external calibration (unprocessed data of reflected signals from a fla
 %
 %
 \section{System Level Assembly, Integration and Verification}
+Verification by test will be the main method of verification.
+
+Vibration and thermal vacuum tests will be done at IRF in Kiruna. Shock tests may be performed at Chalmers University of Technology\cite{Jonsson}. 
 %
+\begin{table}[H]
+\centering
+\caption{Instrument testing for different instrument models}
+\label{tab:instrument_testing}
+\begin{tabular}{p{0.35\textwidth}p{0.10\textwidth}p{0.10\textwidth}p{0.10\textwidth}p{0.25\textwidth}}
+\hline
+\textbf{Test} & \textbf{STM} & \textbf{EM} & \textbf{PFM} & \textbf{Facility}\\
+\hline
+Mechanical Interface, Mass Inspection & - & - & - & \\
+Electrical Performance & - & - & - & \\
+Functional Test & - & - & - & \\
+Strength Test & - & - & - & \\
+Sine and Random Vibrations Test & - & - & - & \\
+Shock Test & - & - & - & \\
+Thermal Vacuum Test & - & - & - &\\
+EMC Conducted and Radiated & - & - & - & \\
+DC Magnetic Test & - & - & - &\\
+\hline
+\end{tabular}
+\end{table}
+
 %
 \subsection{Requirements}
 \subsection{Deliverable Models}
 %
-Two models of the proposed instrument will be developed:
+In appliance with EIDA-R005590\cite{EIDA}, three instrument models will be developed:
 \begin{itemize}
-\item Engineering Model - To test and verify the instruments functional and technical requirements as well as the instrument performance.\\
-\item Protoflight Model - will be build using full flight standard components and tested at qualification levels.
+\item \ac{STM} - For testing of the instrument structural and thermal interface to the spacecraft\\
+\item \ac{EM} - To test and verify the instruments functional and technical requirements as well as the instrument performance. If required, this unit will be refurbished as an \ac{FS}.\\
+\item \ac{PFM} - will be build using full flight standard components and tested for qualification and acceptance levels.
 \end{itemize}
 %
 \subsection{System Level Testing}
@@ -86,16 +114,23 @@ Operation modes: Low data rate, high data rate, calibration, receive only
 Silent Modes: Off, Heating
 Support modes: Check/init, standby, warm-up, idle
 %
-%
+The instrument consortia will provide expert support to the JUICE \ac{MOC} and \ac{SOC} during the payload commissioning phase and at critical operations.
 %
 \section{Science Ground Segment Concept}
 %operations requests, on-board software maintenance (test facilities to generate and test update)
 %Further described in the Science Implementation Plan (SIP) - answer to SIRD
+ESA ESTRACK will be used as ground station network. A JUICE \ac{MOC} established at ESOC and \ac{SOC} at ESAC.
+
 \subsection{Implementation concept for the Science Ground Segment}
 \subsection{Planning of payload operations}
+During the ??? mission phases, the instrument consortia will submit science operations plans and perform maintenance and optimizations as required.
 \subsection{On-Board Software Maintenance}
 %
 \section{Data Reduction, Scientific Analysis and Archival Plans}
+It is expected that housekeeping data and raw science data will be sent from the JUICE \ac{MOC}, over internet, to the instrument team in LTU, Kiruna. To correctly remove surface clutter signals, it is required to simultaneously receive the data from the altimeter instrument. 
+Quick-Look data analyser - to optimise efficiency and scientific return of instrument operations.
+L1b raw data (un-calibrated science data) analyser
+Data will be archived at LTU and also sent to JUICE science data archive.
 %
 \section{Organization}
 %\subsection{Schedule}
@@ -103,7 +138,7 @@ Support modes: Check/init, standby, warm-up, idle
 (Please note, some of the contents in this section are fictive and should not be taken literally.)\\\\
 %
 \noindent
-Dr. Jan Sommer is the instrument \ac{PI}. He has an extensive background studying planet geology, especially on Mars. This study will enhance our knowledge of planet inner structures, geology and provide better understanding of planet formations and evolution.\\\\
+Jan Sommer is the instrument \ac{PI}. He has an extensive background studying planet geology, especially on Mars. This study will enhance our knowledge of planet inner structures, geology and provide better understanding of planet formations and evolution.\\\\
 %
 \noindent
 Morten Olsen is the project manager. With experience as project manager for previous successful space instruments, he will manage the project schedules and budgets.\\\\
