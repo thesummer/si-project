@@ -14,6 +14,10 @@ The \ac{JUICE} mission is an \ac{ESA} L1 class science mission selected in May 2
 %
 The proposed instrument has been designed in accordance to ESA \ac{EID-A} for the \ac{JUICE} mission\cite{EIDA}.
 %
+%
+\input{Instrument_design}
+%
+%
 \subsection{Design Overview}
 \subsection{Instrument Design Elements}
 \subsection{Technical Resources}
@@ -130,6 +134,8 @@ The instrument consortia will provide expert support to the JUICE \ac{MOC} and \
 %Further described in the Science Implementation Plan (SIP) - answer to SIRD
 ESA ESTRACK will be used as ground station network. A JUICE \ac{MOC} established at ESOC and \ac{SOC} at ESAC.
 
+Prior to uploading any maintenance updates to the instrument, the updated software will be tested on the \ac{QM} instrument with the raw signal simulator \ac{EGSE}.
+
 \subsection{Implementation concept for the Science Ground Segment}
 \subsection{Planning of payload operations}
 During the ??? mission phases, the instrument consortia will submit science operations plans and perform maintenance and optimizations as required.
@@ -141,7 +147,7 @@ It is expected that housekeeping data and science data will be sent from the JUI
 %
 A Quick-Look data analyser software will be developed, to optimise efficiency and scientific return of instrument operations.
 %
-A software tool to analyse L1b raw data values (un-calibrated science data) will also be developed. 
+A software tool will also be developed to analyse and convert L1b raw data values (un-calibrated science data) into L2/L3 data files.
 %
 \section{Organization}
 %
