@@ -2,7 +2,7 @@
 \label{IPR_design}
 This section is related to the instrument concept, design and its characteristics 
 \subsection{Instrument Concept}
-\ac{IPR} is an active radar sounding instrument which is based on the transmission of the electromagnetic waves at low frequency and uses reflected echoes from the surface and subsurface to image the subsurface structure that contains the information about the interfaces of different subsurface layers. Thanks to the relatively low frequency and the nadir-looking geometry, only a portion of the transmitted pulse is backscattered from the surface, while a significant part of the pulse is propagated to the subsurface icy layers\cite{Gany_SRS}. The coherent echoes backscattered from the subsurface interfaces within each resolution cell (defined by the along-track and across-track resolutions) are detected by the receiver and visualized in the resulting radargram \cite{Gany_SRS}. Working principle of the \ac{IPR} for \ac{JGO} is shown in figure \ref{fig:IPR_concept}. Off-nadir echo (e.g from point B in figure \ref{fig:IPR_concept}) will reach the antenna at the same time as the subsurface echo thus masking it. So clutter estimation and rejection is done in signal processing for both along track and across track direction.\\
+\ac{IPR} is an active radar sounding instrument which is based on the transmission of the electromagnetic waves at low frequency and uses reflected echoes from the surface and subsurface to image the subsurface structure that contains the information about the interfaces of different subsurface layers. Thanks to the relatively low frequency and the nadir-looking geometry, only a portion of the transmitted pulse is backscattered from the surface, while a significant part of the pulse is propagated to the subsurface icy layers \cite{Gany_SRS}. The coherent echoes backscattered from the subsurface interfaces within each resolution cell (defined by the along-track and across-track resolutions) are detected by the receiver and visualized in the resulting radargram \cite{Gany_SRS}. Working principle of the \ac{IPR} for \ac{JGO} is shown in figure \ref{fig:IPR_concept}. Off-nadir echo (e.g from point B in figure \ref{fig:IPR_concept}) will reach the antenna at the same time as the subsurface echo thus masking it. So clutter estimation and rejection is done in signal processing for both along track and across track direction.\\
 %
 The \ac{IPR} for the \ac{JGO} system is based on a mature and experienced technology that has flight heritage for two different Mars Missions (MARS Express, with the \ac{MARSIS} instrument; NASA Reconnaissance Orbiter with \ac{SHARAD} with slight variations to full fill  the mission objectives of the \ac{JGO}.
 %
@@ -16,9 +16,8 @@ The \ac{IPR} for the \ac{JGO} system is based on a mature and experienced techno
 \subsection{Instrument Description}
 Architecture of the \ac{IPR} is shown in figure \ref{fig:IPR_achitecture} which is mostly inherited from the SHARAD instrument. It  consists of four main subsystems; \ac{DES}, \ac{TFE}, \ac{RX} and dipole antenna.
 \subsubsection{Digital Electronics}
-\ac{DES} is responsible for the radar signal generation. In the design of \ac{IPR}, concept of software defined radar is utilized with maximum processing in software domain while minimizing the analog electronics. So in order to maintain the high fidelity of the signal, frequency-modulated radar pulses (chirp) are digitally generated directly at the transmit frequency so that no up conversion is needed in the analog domain. Chirp modulated signal will improve the range resolution even with low peak power pulses due to hardware constraints.
-\ac{DES} is also responsible for all the command and control functions with the spacecraft bus. This controls all the timing sequences of the instrument which are derived from the master oscillator. Instrument will be interfaced to the spacecraft through \ac{DES} to receive telecommands and for sending telemetries.\\
-\ac{DES} provides the processing capabilities to raw data collected during observation and packetizes them into science data packet together with the auxiliary information for ground processing.
+\ac{DES} is responsible for the radar signal generation. In the design of \ac{IPR}, concept of software defined radar is utilized with maximum processing in software domain while minimizing the analog electronics. So in order to maintain the high fidelity of the signal, frequency-modulated radar pulses (chirp) are digitally generated directly at the transmit frequency so that no up conversion is needed in the analog domain. Chirp modulated signal will improve the range resolution giving a gain provided by equation \ref{eq:chirp gain} even with low peak power pulses due to hardware constraints.\\
+\ac{DES} is also responsible for all the command and control functions with the spacecraft bus. This controls all the timing sequences of the instrument which are derived from the master oscillator. Instrument will be interfaced to the spacecraft through \ac{DES} to receive telecommands and for sending telemetries. \ac{DES} provides the processing capabilities to raw data collected during observation and packetizes them into science data packet together with the auxiliary information for ground processing.
 \begin{equation}
 \eta_{z} = \tau B_{w}
 \label{eq:chirp gain}
@@ -30,7 +29,7 @@ In the \ac{TFE} section, Frequency modulated chirp signal is first amplified to 
 \subsubsection{Receiver}
 The received signal is first amplified with low noise amplifier and then filtered to reduce the noise in the receiver bandwidth. The amplified signal is converted into digital domain using \ac{ADC} and routed to the \ac{DES} where it is down converted and down sampled.
 \subsubsection{Antenna}
-The antenna for \ac{IPR} is a 3.6m fold able dipole antenna developed by the North Grumrupmam called foldable flatten able tube(FFT). This technology  has been used previously for \ac{MARSIS} mission. Dipole antenna has a radiation pattern of doughnut shape with the null at the  current feed point.
+The antenna for \ac{IPR} is a 3.6m fold able dipole antenna developed by the North Grumrupmam called foldable flatten able tube(FFT). This technology  has been previously used for \ac{MARSIS} mission. Dipole antenna has a radiation pattern of doughnut shape with the null at the  current feed point.
 \begin{figure}[bht]
 \centering
 \includegraphics[scale=0.5]{Figures/IPR_Architecture.pdf}
@@ -39,6 +38,22 @@ The antenna for \ac{IPR} is a 3.6m fold able dipole antenna developed by the Nor
 \end{figure}
 %
 \subsection{Instrument Characteristics}
+The characteristics and parametrs of the \ac{IPR} are listed in table which are explained in the following subsections.\\
+\begin{tabular}{|c|c|}
+\hline 	\textbf{Parameter}		&  \textbf{Value}\\ 
+\hline  Orbit Altitude			&  $200 Km$	\\ 
+\hline  Centre Frequency		&  $45 MHz$		\\ 
+\hline  Chirp Bandwidth			&  $10 MHz$		\\
+\hline  PRF						&  $963.39 Hz$	\\  
+\hline  Pulse Width				&  $85 us$		\\ 
+\hline  Ice Range Resolution	&  $8.6 m$		\\
+\hline  Along Track Resolution	&  $817 m$		\\ 
+\hline  Across Track Resolution	&  $4899 m$		\\ 
+\hline  SNR						&  $14.7 dB$	\\ 
+\hline  Power					&  $20 W$		\\ 
+\hline  Mass					&  $10 Kg$		\\ 
+\hline 
+\end{tabular} 
 \subsubsection{Central Frequency and Bandwidth}
 Radar frequency determines the penetration capability of the radar, while bandwidth of the transmitted pulse determines range resolution \cite{penetrartion}. From the Jovian radiation spectrum, it is clear that the frequency cutoff for the Jovian radio
 emission affecting the subsurface radar is around 40 MHz. So, we choose 45 MHz as central frequency for the \ac{IPR} with 10 MHz bandwidth (40-50 MHz). This gives 3.6m length for the dipole antenna. Assuming pure ice ($\epsilon_{r} = 3.2$), Vertical resolution of the \ac{IPR} is 8.4 m which is calculated from equation \ref{eq:range_resolution}.
@@ -49,7 +64,7 @@ emission affecting the subsurface radar is around 40 MHz. So, we choose 45 MHz a
 \end{equation}
 %
 \subsubsection{pulse repetition frequency and pulse width}
-Pulse width for the\ac{IPR} is $85 us $ as for \ac{SHARAD} instrument with \ac{PRI} of $1038 us$ giving a duty cycle of $8.2\% $This results of \ac{PRF} of $963.39 Hz$. All these timings are shown in figure \ref{fig:PRI}. Receiving window of $165 us$ is dedicated to receive the radar echoes. Size of the receiving window is calculated by adding two way travel time in ice for $5 Km $ depth ($60 us$), chirp signal duration ($85 us$) and  a safety margin of $10 us$ on each side of it. Speed of the electromagnetic wave is reduced by a factor of $1.7$ in ice. Switching time of $177 us$ from transmission to reception mode is incorporated as utilized in \ac{SHARAD} design \cite{SHARAD}.
+Pulse width for the \ac{IPR} is $85 us $ and \ac{PRI} is $1038 us$; giving a duty cycle of $8.2\% $. This results in \ac{PRF} of $963.39 Hz$. All these timings are shown in figure \ref{fig:PRI}. Receiving window of $165 us$ is dedicated to receive the radar echoes. Size of the receiving window is calculated by adding two way travel time in ice for $5 Km $ depth ($60 us$), chirp signal duration ($85 us$) and  a safety margin of $10 us$ on each sides. Speed of the electromagnetic wave is reduced by a factor of $1.7$ in ice. Switching time of $177 us$ from transmission to reception mode is incorporated as utilized in \ac{SHARAD} design \cite{SHARAD}.
 %
 \begin{figure}[bht]
 \centering
@@ -96,7 +111,7 @@ As the instrument package of the \ac{JGO} mission includes radar altimeter so af
 
 \subsubsection{Ground Resolution}
 Along the track resolution:
-For the unfocussed Doppler processing, along track resolution calculated using equation \ref{eq:along_track_resolution} is 817m. Effective integration time for unfocussed Doppler processing calculated by equation \ref{eq:integration_time} is $860 ms$ and finally the number of pulses used to make synthetic aperture is calculated by equation \ref{eq:Number_pulses} from \cite{Gany_SRS}  which comes out to 666 giving a processing gain of $28 dB$ 
+For the unfocussed Doppler processing, along track resolution calculated using equation \ref{eq:along_track_resolution} is $817 m$. Effective integration time for unfocussed Doppler processing calculated by equation \ref{eq:integration_time} is $860 ms$ and finally the number of pulses used to make synthetic aperture is calculated by equation \ref{eq:Number_pulses} from \cite{Gany_SRS}  which comes out to 666 giving a processing gain of $28 dB$ 
 %
 \begin{equation}
 L_{s} = \sqrt{\dfrac{h\lambda}{2}}
