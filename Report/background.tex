@@ -4,28 +4,17 @@
 This is the \ac{GIPER} instrument proposal in answer to the \ac{ESA} \ac{AO}\cite{JUICE_AO} for the \ac{JUICE} mission. An \ac{IPR} is part of the Model Payload suggested by the  JUICE Science Study Team\cite{yellowbook}. This document will show that the \ac{GIPER} instrument will be able to provide high profile scientific investigations that are in accordance with the scientific and technical requirements of the \ac{JUICE} mission.
 %
 \subsection{JUICE Mission Overview}
-The \ac{JUICE} mission is an \ac{ESA} L1 class science mission selected in May 2012 as part of the \ac{ESA} "Cosmic Vision" programme. The \ac{JUICE} mission originated from a reformulation of the EJSM-Laplace mission into a European-led mission. The mission is scheduled for launch in 2022 and arrival at Jupiter in 2030 where it will be inserted into a Jupiter orbit. It will perform numerous flybys of Callisto, two Europa flybys, insertion into circular Ganymede orbits of three different altitudes and eventually de-orbit onto the Ganymede surface. 
+The \ac{JUICE} mission is an \ac{ESA} L1 class science mission selected in May 2012 as part of the \ac{ESA} "Cosmic Vision" programme. The \ac{JUICE} mission originated from a reformulation of the EJSM-Laplace mission into a European-led mission. The mission is scheduled for launch in 2022 and arrival at Jupiter in 2030 where it will be inserted into a Jupiter orbit. It will include numerous flybys of Callisto, two Europa flybys, insertion into circular Ganymede orbits of three different altitudes and eventually de-orbit onto the Ganymede surface. 
 %
 %
 %
 \input{part_science}
 %
-\section{Technical Description and Design}
-%
-The proposed instrument has been designed in accordance to ESA \ac{EID-A} for the \ac{JUICE} mission\cite{EIDA}.
-%
 %
 \input{Instrument_design}
 %
-%
-%\subsection{Design Overview}
-%\subsection{Instrument Design Elements}
-%\subsection{Technical Resources}
-%\subsection{Instrument Spacecraft Requirements}
 %thermal, power, mechanical mounting, EMC, especially radiation sensitive parts, radiation shielding and mitigation strategy, flight heritage of hardware, ressource budgets, 
-This mission assumes that an altimeter instrument is included in the JUICE mission scientific instrument package. Altimeter is needed to estimate the surface clutter and surface slope.
-%
-The instrument consortia will provide an Instrument Operation Manual.
+%This mission assumes that an altimeter instrument is included in the JUICE mission scientific instrument package. Altimeter is needed to estimate the surface clutter and surface slope.
 %
 \section{Summary of Instrument Interfaces}
 %data, mechanical, power, EMC, thermal,
@@ -34,28 +23,34 @@ An important requirement is to have always the antenna parallel to the ground du
 \section{On-ground and In-flight Test and Calibration}
 %test equipment requirements (i.e. thermal vacuum chamber, EMC labs etc.), EGSE, radar signal simulator(test of ground processing chain),
 %
-The \ac{GIPER} instrument will undergo a series of development and qualification tests to ensure that the instrument functions correctly and that it will achieve its scientific objectives. The required test facilities include \ac{EMC} lab, RF lab, Thermal-Vacuum chamber, vibration and shock testing and a \ac{GIPER} raw signal simulator. Some test facilities are available within the instrument consortium, some will be provided by the Swedish space industry and consortium partners. The instrument will require tests at ESA's \ac{RF} labs for testing of the \ac{GIPER} antenna radiation characteristics. A complete instrument test overview is shown in Table \ref{tab:instrument_testing}.
-%
-\subsection{EGSE}
-A \ac{GIPER} raw signal simulator will be developed by the instrument consortia. This raw signal simulator will be similar to the one developed for the \ac{SHARAD} instrument\cite{Giovanni} as shown in Figure \ref{fig:MEGS} and allow testing of the signal processing chain and to develop a Ganymede transfer function considering the orbit altitude and surface clutter and sub-surface dielectric interfaces. After launch of the JUICE satellite, the \ac{GIPER} \ac{EGSE} will be located at the JUICE \ac{MOC}. A set of calibration files and algorithms will also be send to the JUICE \ac{SOC} for processing of the raw instrument data into L1b data.
-%
-\begin{wrapfigure}{r}{0.3\textwidth}
+\begin{floatingfigure}[r]{0.3\textwidth}
 \centering
 \includegraphics[width=0.27\textwidth]{Figures/MEGS}
 \caption[caption]{Mars Echo Generation System used on the SHARAD instrument\cite{MEGS}}
 \label{fig:MEGS}
-\end{wrapfigure}
+\end{floatingfigure}
+%
+The \ac{GIPER} instrument will undergo a series of development and qualification tests to ensure that the instrument functions correctly and that it will achieve its scientific objectives. 
+%
+%
+The required test facilities include \ac{EMC} lab, RF lab, Thermal-Vacuum chamber, vibration and shock testing and a \ac{GIPER} raw signal simulator. Some test facilities are available within the \ac{GIPER} instrument group, some will be provided by the Swedish space industry and consortium partners. The instrument will require tests at ESA's \ac{RF} labs for testing of the \ac{GIPER} antenna radiation characteristics. A complete instrument test overview is shown in Table \ref{tab:instrument_testing}.
+%
+\vspace{15mm}
+%
+\subsection{EGSE}
+A raw signal simulator will be developed by the \ac{GIPER} instrument group. This raw signal simulator will be similar to the one developed for the \ac{SHARAD} instrument\cite{Giovanni} as shown in Figure \ref{fig:MEGS} and allow testing of the signal processing chain and to develop a Ganymede transfer function considering the orbit altitude and surface clutter and sub-surface dielectric interfaces. After launch of the JUICE satellite, the \ac{GIPER} \ac{EGSE} will be located at the JUICE \ac{MOC}. A set of calibration files and algorithms will also be send to the JUICE \ac{SOC} for processing of the raw instrument data into L1b data.
+%
 %
 \subsection{In-Flight Calibration}
-As was done for the SHARAD instrument\cite{SHARAD_ppt}, two types of in-flight calibrations are planned. An internal calibration is performed by directly looping a transmitted signal to the receiver and sending the raw unprocessed data to ground. An external calibration is performed by transmitting signals onto a flat surface region of Ganymede, receiving the echo and sending the unprocessed data to ground.
+As was done for the SHARAD instrument\cite{SHARAD_ppt}, two types of in-flight calibrations are planned. An internal calibration is performed by directly looping a transmitted signal to the receiver and sending the raw unprocessed data to ground. An external calibration is performed by transmitting signals onto a flat surface region of Ganymede, receiving the echo and sending the unprocessed data to ground. These calibrations will be performed once the radar antenna has been successfully deployed.
 %
 %
 \section{System Level Assembly, Integration and Verification}
 %
-Verification by testing will be the main method of verification for the \ac{GIPER} instrument. Other means of verification will be by analyses and mathematical models.  
+Verification by testing will be the main method of verification for the \ac{GIPER} instrument. Other means of verification are analyses and mathematical models.  
 %
 \subsection{Requirements}
-Of special concern to the \ac{GIPER} instrument performance and degradation is the intense radiation of high energy electrons which may affect the instrument electronics and the Heavy Ion Non-Ionsing Dose which might degrade the antenna surface material. Testing and verification must ensure that the instrument will meet is full operational performance when it enters its primary scientific operation phase at the spacecraft Ganymede orbit insertion ten years after launch.
+Of special concern to the \ac{GIPER} instrument performance and degradation is the intense radiation of high energy electrons which may affect the instrument electronics. Testing and verification must ensure that the instrument will meet is full operational performance when it enters its primary scientific operation phase at the spacecraft Ganymede orbit insertion ten years after launch.
 %
 \subsection{Deliverable Models}
 %
@@ -78,16 +73,16 @@ Table \ref{tab:instrument_testing} shown the test plan for each instrument model
 \centering
 \caption{Instrument test levels for different instrument models (D=Development, Q=Qualification, P=Proto-flight)}
 \label{tab:instrument_testing}
-\begin{tabular}{p{0.35\textwidth}p{0.075\textwidth}p{0.075\textwidth}p{0.075\textwidth}p{0.075\textwidth}p{0.25\textwidth}}
+\begin{tabular}{p{0.40\textwidth}ccccp{0.25\textwidth}}
 \hline
-\textbf{Test} & \textbf{STM} & \textbf{EM} & \textbf{QM}& \textbf{PFM} & \textbf{Facility}\\
+\textbf{Test} & \textbf{STM} & \textbf{EM} & \textbf{QM}& \textbf{PFM} & \textbf{Test Facilities}\\
 \hline
-Mechanical Interface, Inspection, Alignment & - & - & - & P & LTU Rymdcampus\\
-Mechanisms lifetime testing & Q & - & - & - & \ac{IRF}\\
-Functional and Performance Test & - & D & Q & P & \ac{IRF}\\
-Sine and Random Vibrations Test & Q & - & - & P & \ac{IRF}\\
-Shock Test & Q & - & - & P &Chalmers University of Technology\cite{Jonsson}\\
-Thermal Vacuum Test & - & D & Q & P & \ac{IRF}\\
+Visual Inspections & - & - & - & P & LTU Rymdcampus\\
+Mechanisms lifetime & Q & - & - & - & \ac{IRF}\\
+Functional and Performance & - & D & Q & P & \ac{IRF}\\
+Sine and Random Vibrations & Q & - & - & P & \ac{IRF}\\
+Shock & Q & - & - & P &Chalmers University of Technology\cite{Jonsson}\\
+Thermal Vacuum & - & D & Q & P & \ac{IRF}\\
 EMC Conducted/Susceptibility & - & D & - & P &\\
 RF Test & - & - & Q & - & ESA ESTEC\\
 DC Magnetic Test & - & D & Q & P & \ac{IRF}\\
@@ -128,23 +123,23 @@ Additionally, four support modes are defined:
 \item Idle
 \end{itemize}
 %
-The instrument consortia will provide expert support to the JUICE \ac{MOC} and \ac{SOC} during the \ac{GIPER} instrument commissioning phase and at critical operations.
 %
 \section{Science Ground Segment Concept}
-%operations requests, on-board software maintenance (test facilities to generate and test update)
-%Further described in the Science Implementation Plan (SIP) - answer to SIRD
-ESA ESTRACK will be used as ground station network. A JUICE \ac{MOC} established at ESOC and \ac{SOC} at ESAC.
-
-Prior to uploading any maintenance updates to the instrument, the updated software will be tested on the \ac{QM} instrument with the raw signal simulator \ac{EGSE}.
-
-\subsection{Implementation concept for the Science Ground Segment}
-\subsection{Planning of payload operations}
-During the ??? mission phases, the instrument consortia will submit science operations plans and perform maintenance and optimizations as required.
+This section describes the preliminary expected GIPER contributions to the JUICE \ac{SGS}. These will later be further specified in the \ac{GIPER} \ac{SIP}.
+%
+\subsection{Implementation Concept for the Science Ground Segment}
+A dedicated \ac{GIPER} \ac{SOG} will be established at LTU, Kiruna as has been done on previous instruments from \ac{IRF}\cite{ASPERA_PO}. %
+%
+\subsection{Planning of Payload Operations}
+The \ac{GIPER} \ac{SOG} will provide the necessary support to the JUICE \ac{SOC} in preparation of the instrument science operations planning and scheduling.
+%
 \subsection{On-Board Software Maintenance}
+During instrument commissioning and critical operation phases, the \ac{GIPER} \ac{SOG} may be relocated to the JUICE \ac{MOC} established at ESOC or \ac{SOC} at ESAC along with the \ac{EGSE}. 
+%
 %
 \section{Data Reduction, Scientific Analysis and Archival Plans}
 %
-It is expected that housekeeping data and science data will be sent from the JUICE \ac{MOC}, via internet, to the instrument team in LTU, Kiruna. Here data will be reduced, archived and distributed to other science teams including the JUICE science data archive. To correctly remove surface clutter signals, it is required to have simultaneously data from the altimeter instrument. 
+It is expected that housekeeping data and science data will be sent from the JUICE \ac{MOC}, via internet, to the \ac{GIPER} \ac{SOG} in LTU, Kiruna. Here data will be reduced, archived and distributed to other science teams including the JUICE science data archive. To correctly remove surface clutter signals, it is required to have simultaneously data from the altimeter instrument. 
 %
 A Quick-Look data analyser software will be developed, to optimise efficiency and scientific return of instrument operations.
 %
@@ -152,7 +147,7 @@ A software tool will also be developed to analyse and convert L1b raw data value
 %
 \section{Organization}
 %
-The \ac{GIPER} instrument consortium team is led by three SpaceMaster students from round 7. LTU and \ac{IRF} are supporting institutions.
+The \ac{GIPER} instrument group is led by three SpaceMaster students from round 7. LTU and \ac{IRF} are supporting institutions.
 %
 \subsection{Management Structure}
 %
@@ -163,7 +158,7 @@ Jan Sommer is the instrument \ac{PI}. With a background in Physics and numerous 
 Morten Olsen is the project manager. With experience as project manager for previous space projects including CanSat and U-SPACE, he will manage the \ac{GIPER} project to ensure that deliverables are ready on schedule and within budget.\\\\
 %
 \noindent
-Omair Sarwar is the technical manager. With a background in Aeronautical Engineering, experience with telecommunication systems and having studied radar courses, he will ensure that the \ac{GIPER} instrument meets the performance requirements, proper instrument verification and qualification in accordance with ESA space standards.\\\\
+Omair Sarwar is the technical manager. With a background in Aeronautical Engineering, experience with telecommunication systems and having studied radar courses, he will ensure that the \ac{GIPER} instrument meets the performance requirements, proper instrument verification and qualification in accordance with ESA space standards.
 %
 \subsection{Budget}
 ACME Space Agency is the \ac{LFA} for this instrument proposal. A \ac{LOE} has been issued ensuring funding for the project during the instrument development phase, in-flight operations and post operations activities.
