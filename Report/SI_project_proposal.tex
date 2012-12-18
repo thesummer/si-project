@@ -6,7 +6,8 @@
 \usepackage{lmodern}
 \usepackage{biblatex}
 \usepackage{graphicx}
-\usepackage{wrapfig}
+%\usepackage{wrapfig}
+\usepackage{floatflt}
 \usepackage{fancyhdr}
 \usepackage[textfont={small,it},labelfont=bf,labelsep=endash]{caption}
 \usepackage[table]{xcolor}
@@ -32,7 +33,7 @@
 \def\doctitle{GIPER Ganymede Ice PEnetrating Radar}
 \def\docsubtitle{Part I: Instrument Scientific and Technical Plan}
 \def\docversion{1}
-\def\docreference{JUI-IRF-GIP-PO-001}
+\def\docreference{JUI-LTU-GIP-PO-001}
 
 
 \fancyhead{}
@@ -40,10 +41,12 @@
 \fancyhead[RE]{\slshape Doc. version: \docversion}
 \fancyhead[LO,LE]{\slshape \doctitle}
 \renewcommand{\headrulewidth}{0.4pt}
-\fancyhfoffset{1cm}
 \addtolength{\headheight}{1cm}
 \fancyfoot{}
+\fancyhfoffset{1cm}
 \fancyfoot[C]{\thepage}
+
+\setlength{\footskip}{30pt}
 
 
 
@@ -76,6 +79,6 @@
 \newgeometry{margin=1.5cm}
 \pagestyle{plain}
 
-\input{appendices}
+%\input{appendices}
 
 \end{document}
