@@ -2,7 +2,8 @@
 \label{IPR_design}
 The technical design of this \ac{IPR} proposal is in accordance with ESA Model Payload Definition Document for the Jupiter Icy Moons Explorer \cite{JGO_Payload_def} and addresses the instrument concept, design and its characteristics 
 \subsection{Instrument Concept}
-\ac{IPR} is an active radar sounding instrument which is based on the transmission of the electromagnetic waves at low frequency and uses reflected echoes from the surface and subsurface to image the subsurface structure that contains the information about the interfaces of different subsurface layers. Thanks to the relatively low frequency and the nadir-looking geometry, only a portion of the transmitted pulse is backscattered from the surface, while a significant part of the pulse is propagated to the subsurface icy layers \cite{Gany_SRS}. The coherent echoes backscattered from the subsurface interfaces within each resolution cell (defined by the along-track and across-track resolutions) are detected by the receiver and visualized in the resulting radargram \cite{Gany_SRS}. Working principle of the \ac{IPR} for \ac{JGO} is shown in figure \ref{fig:IPR_concept}. Off-nadir echo (e.g from point B in figure \ref{fig:IPR_concept}) will reach the antenna at the same time as the subsurface echo thus masking it. So clutter estimation and rejection is done in signal processing for both along track and across track direction.\\
+\ac{IPR} is an active radar sounding instrument which is based on the transmission of the electromagnetic waves at low frequency and uses reflected echoes from the surface and subsurface to image the subsurface structure that contains the information about the interfaces of different subsurface layers. Thanks to the relatively low frequency and the nadir-looking geometry, only a portion of the transmitted pulse is backscattered from the surface, while a significant part of the pulse is propagated to the subsurface icy layers \cite{Gany_SRS}. The coherent echoes backscattered from the subsurface interfaces within each resolution cell (defined by the along-track and across-track resolutions) are detected by the receiver and visualized in the resulting radargram \cite{Gany_SRS}. Working principle of the \ac{IPR} for \ac{JGO} is shown in figure \ref{fig:IPR_concept}. Off-nadir echo (e.g from point B in figure \ref{fig:IPR_concept}) will reach the antenna at the same time as the subsurface echo thus masking it. 
+So clutter estimation and rejection is done in signal processing for both along track and across track direction.\\
 %
 \begin{figure}[bht]
 \centering
@@ -14,20 +15,20 @@ The technical design of this \ac{IPR} proposal is in accordance with ESA Model P
 \subsection{Instrument Description}
 Architecture of the \ac{IPR} is shown in figure \ref{fig:IPR_achitecture} which is mostly inherited from the SHARAD instrument. It  consists of four main subsystems; \ac{DES}, \ac{TFE}, \ac{RX} and dipole antenna.
 \subsubsection{Digital Electronics}
-\ac{DES} is responsible for the radar signal generation. In the design of \ac{IPR}, concept of software defined radar is utilized with maximum processing in software domain while minimizing the analog electronics. So in order to maintain the high fidelity of the signal, frequency-modulated radar pulses (chirp) are digitally generated directly at the transmit frequency so that no up conversion is needed in the analog domain. Chirp modulated signal will improve the range resolution giving a gain provided by equation \ref{eq:chirp gain} even with low peak power pulses due to hardware constraints.\\
-\ac{DES} is also responsible for all the command and control functions with the spacecraft bus. This controls all the timing sequences of the instrument which are derived from the master oscillator. Instrument will be interfaced to the spacecraft through \ac{DES} to receive telecommands and for sending telemetries. \ac{DES} provides the processing capabilities to raw data collected during observation and packetizes them into science data packet together with the auxiliary information for ground processing.
+\ac{DES} is responsible for the radar signal generation. In the design of \ac{IPR}, the concept of software defined radar is utilized with maximum processing in software domain while minimizing the analog electronics. So in order to maintain the high fidelity of the signal, frequency-modulated radar pulses (chirp) are digitally generated directly at the transmit frequency so that no up conversion is needed in the analog domain. A chirp modulated signal will improve the range resolution giving a gain provided by equation \ref{eq:chirp gain} even with low peak power pulses due to hardware constraints.\\
+The \ac{DES} is also responsible for all the command and control functions with the spacecraft bus. This controls all the timing sequences of the instrument which are derived from the master oscillator. The instrument will be interfaced to the spacecraft through the \ac{DES} to receive telecommands and for sending telemetries. Also the \ac{DES} provides the processing capabilities for raw data collected during observation and packetizing them into science data packets together with the auxiliary information for ground processing.
 \begin{equation}
 \eta_{z} = \tau B_{w}
 \label{eq:chirp gain}
 \end{equation}
 %
 \subsubsection{Transmitter}
-In the \ac{TFE} section, Frequency modulated chirp signal is first amplified to the desired power level and then though the duplexer it goes to the matching network. Duplexer isolates the transmitter from receiver while permitting the use of same antenna. Matching network maximizes the radiated power.
+In the \ac{TFE} section, a frequency modulated chirp signal is first amplified to the desired power level and then through the duplexer it goes to the matching network. The duplexer isolates the transmitter from the receiver while permitting the use of the same antenna. A matching network maximizes the radiated power.
 %
 \subsubsection{Receiver}
-The received signal is first amplified with low noise amplifier and then filtered to reduce the noise in the receiver bandwidth. The amplified signal is converted into digital domain using \ac{ADC} and routed to the \ac{DES} where it is down converted and down sampled.
+The received signal is first amplified by a low noise amplifier and then filtered to reduce the noise in the receiver bandwidth. The amplified signal is converted into the digital domain using an \ac{ADC} and routed to the \ac{DES} where it is down converted and down sampled.
 \subsubsection{Antenna}
-The antenna for \ac{IPR} is a 3.6m fold able dipole antenna developed by the North Grumrupmam called foldable flatten able tube(FFT). This technology  has been previously used for \ac{MARSIS} mission. Dipole antenna has a radiation pattern of doughnut shape with the null at the  current feed point.
+The antenna for the \ac{IPR} is a 3.6m foldable dipole antenna developed by North Grumrupmam called foldable flattenable tube(FFT). This technology  has been previously used in the \ac{MARSIS} mission. The dipole antenna has a radiation pattern of doughnut shape with the null at the  current feed point.
 \begin{figure}[bht]
 \centering
 \includegraphics[scale=0.5]{Figures/IPR_Architecture.pdf}
@@ -36,7 +37,7 @@ The antenna for \ac{IPR} is a 3.6m fold able dipole antenna developed by the Nor
 \end{figure}
 %
 \subsection{Instrument Characteristics}
-The characteristics and parametrs of the \ac{IPR} are listed in table which are explained in the following subsections.\\
+The characteristics and parameters of the \ac{IPR} are listed in table \ref{tab:parameter} which are explained in the following subsections.\\
 
 \begin{table}[H]
 \centering
@@ -44,22 +45,22 @@ The characteristics and parametrs of the \ac{IPR} are listed in table which are 
 \label{tab:parameter}
 \begin{tabular}{|c|c|}
 \hline 	\textbf{Parameter}		&  \textbf{Value}\\ 
-\hline  Orbit Altitude			&  $200 Km$	\\ 
-\hline  Centre Frequency		&  $45 MHz$		\\ 
-\hline  Chirp Bandwidth			&  $10 MHz$		\\
-\hline  PRF						&  $963.39 Hz$	\\  
-\hline  Pulse Width				&  $85 us$		\\ 
-\hline  Ice Range Resolution	&  $8.6 m$		\\
-\hline  Along Track Resolution	&  $817 m$		\\ 
-\hline  Across Track Resolution	&  $4899 m$		\\ 
-\hline  SNR						&  $14.7 dB$	\\ 
-\hline  Power					&  $20 W$		\\ 
-\hline  Mass					&  $10 Kg$		\\ 
+\hline  Orbit Altitude			&  $200$~km	\\ 
+\hline  Centre Frequency		&  $45$~MHz		\\ 
+\hline  Chirp Bandwidth			&  $10$~MHz		\\
+\hline  PRF						&  $963.39$~Hz	\\  
+\hline  Pulse Width				&  $85 \mathrm{~\mu s}$		\\ 
+\hline  Ice Range Resolution	&  $8.6$~m		\\
+\hline  Along Track Resolution	&  $817$~m		\\ 
+\hline  Across Track Resolution	&  $4899$~m		\\ 
+\hline  SNR						&  $14.7$~dB	\\ 
+\hline  Power					&  $20$~W		\\ 
+\hline  Mass					&  $10$~kg		\\ 
 \hline 
 \end{tabular} 
 \end{table}
 \subsubsection{Central Frequency and Bandwidth}
-Radar frequency determines the penetration capability of the radar, while bandwidth of the transmitted pulse determines range resolution \cite{penetrartion}. From the Jovian radiation spectrum as shown in figure \ref{fig:Jovian_radio_emission} measured at 1 AU, it is clear that the frequency cutoff for the Jovian radio emission affecting the subsurface radar is around 40 MHz. So, we choose 45 MHz as central frequency for the \ac{IPR} with 10 MHz bandwidth (40-50 MHz). This gives 3.6m length for the dipole antenna. Assuming ice ($\epsilon_{r} = 3.2$), Vertical resolution of the \ac{IPR} is 8.4 m which is calculated from equation \ref{eq:range_resolution}.
+The radar frequency determines the penetration capability of the radar, while the bandwidth of the transmitted pulse determines range resolution \cite{penetrartion}. From the Jovian radiation spectrum as shown in figure \ref{fig:Jovian_radio_emission} measured at 1 AU, it is clear that the frequency cutoff for the Jovian radio emission affecting the subsurface radar is around 40 MHz. So, we choose 45 MHz as central frequency for the \ac{IPR} with 10 MHz bandwidth (40-50 MHz). This gives 3.6~m length for the dipole antenna. Assuming ice ($\epsilon_{r} = 3.2$), Vertical resolution of the \ac{IPR} is 8.4 m which is calculated from equation \ref{eq:range_resolution}.
 %
 \begin{equation}
 \rho_{z} = \dfrac{c}{2B_{w}\sqrt{\epsilon_{r}}}
@@ -73,8 +74,8 @@ Radar frequency determines the penetration capability of the radar, while bandwi
 \label{fig:Jovian_radio_emission}
 \end{figure}
 %
-\subsubsection{pulse repetition frequency and pulse width}
-Pulse width for the \ac{IPR} is $85 us $ and \ac{PRI} is $1038 us$; giving a duty cycle of $8.2\% $. This results in \ac{PRF} of $963.39 Hz$. All these timings are shown in figure \ref{fig:PRI}. Receiving window of $165 us$ is dedicated to receive the radar echoes. Size of the receiving window is calculated by adding two way travel time in ice for $5 Km $ depth ($60 us$), chirp signal duration ($85 us$) and  a safety margin of $10 us$ on each sides. Speed of the electromagnetic wave is reduced by a factor of $1.7$ in ice. Switching time of $177 us$ from transmission to reception mode is incorporated as utilized in \ac{SHARAD} design \cite{SHARAD}.
+\subsubsection{Pulse repetition frequency and pulse width}
+The pulse width for the \ac{IPR} is $85 \mathrm{~\mu s} $ and \ac{PRI} is $1038 \mathrm{~\mu s}$; giving a duty cycle of $8.2\% $. This results in a \ac{PRF} of $963.39$~Hz. All these timings are shown in figure \ref{fig:PRI}. A receiving window of $165 \mathrm{~\mu s}$ is dedicated to receive the radar echoes. The size of the receiving window is calculated by adding a two way travel time in ice for $5$~km depth ($60 \mathrm{~\mu s}$), the chirp signal duration ($85\mathrm{~\mu s}$) and  a safety margin of $10 \mathrm{~\mu s}$ on each sides. The speed of the electromagnetic waves is reduced by a factor of $1.7$ in ice. A switching time of $177 \mathrm{~\mu s}$ from transmission to reception mode is incorporated as utilized in the \ac{SHARAD} design \cite{SHARAD}.
 %
 \begin{figure}[bht]
 \centering
@@ -144,7 +145,8 @@ N_{g} = K_{B}T_{g}B_{w}
 \label{SAR}
 As the directivity of the dipole antenna is quite low which will illuminate a large surface area of the target. This will result in echoes coming from the off-nadir along with nadir direction as shown in figure \ref{fig:IPR_concept}. This off-nadir echoes called clutter can be divided into two parts; along the track clutter and across the track clutter.\\
 %
-Along the track clutter will be removed by the synthetic aperture processing technique which uses the relative motion between the spacecraft and target to synthesize a large aperture which is equal to the space covered during the integration time. As \ac{IPR} is a coherent radar, it measures and records the phase history of the received signals. In order to reduce on board computation and downlink data rate, Doppler processing is chosen unfocussed and moreover following the \ac{MARSIS} approach i.e., requiring that the signal phase variation during a synthetic aperture is smaller than $\pi/4$, the phase compensation of the echoes during the formation of a synthetic aperture is simpler and can be performed on board in real time, as only a linear phase compensation of the echoes is required \cite{Gany_SRS}. To ensure that only coherently resolved echoes from a contiguous Fresnel zone are being illuminated, the maximum along track integration distance is limited to the Fresnel zone given by equation \ref{eq:fresenel_circle}.
+Along the track clutter will be removed by the synthetic aperture processing technique which uses the relative motion between the spacecraft and target to synthesize a large aperture which is equal to the space covered during the integration time. As \ac{IPR} is a coherent radar, it measures and records the phase history of the received signals. In order to reduce on board computation and downlink data rate, Doppler processing is chosen unfocussed and moreover following the \ac{MARSIS} approach i.e., requiring that the signal phase variation during a synthetic aperture is smaller than $\pi/4$, the phase compensation of the echoes during the formation of a synthetic aperture is simpler and can be performed on board in real time, as only a linear phase compensation of the echoes is required \cite{Gany_SRS}. To ensure that only coherently resolved echoes from a contiguous Fresnel zone are being illuminated, the maximum along track integration distance is limited to the Fresnel zone given by equation \ref{eq:
+fresenel_circle}.
 \\
 Across the track clutter is limited by the antenna pattern and will be removed by developing a simulator of the radar using a model of the overflown surface (accurately modelled at the scale of interest), which predicts the presence of clutter echoes. In this way, the corresponding echoes appearing in the measured radar-gram can be properly interpreted as clutter and then neglected \cite{SHARAD}. Some information for Ganymede was obtained through a \ac{DEM} produced from Voyager images. However, this is enough  for deriving \acp{DEM} of different portions of Ganymede for a better understanding of the clutter issue \cite{Gany_SRS}. As the instrument package of the \ac{JGO} mission includes radar altimeter so after modelling the Ganeymede surface, across the track clutter will be removed.
 \subsection{Design feasibility}
