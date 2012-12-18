@@ -1,9 +1,8 @@
 \section{Instrument Design}
 \label{IPR_design}
-The technical design of this \ac{IPR} proposal is in accordance with ESA Model Payload Definition Document for the Jupiter Icy Moons Explorer \cite{JGO_Payload_def} and addresses the instrument concept, design and its characteristics 
+%
 \subsection{Instrument Concept}
-\ac{IPR} is an active radar sounding instrument which is based on the transmission of the electromagnetic waves at low frequency and uses reflected echoes from the surface and subsurface to image the subsurface structure that contains the information about the interfaces of different subsurface layers. Thanks to the relatively low frequency and the nadir-looking geometry, only a portion of the transmitted pulse is backscattered from the surface, while a significant part of the pulse is propagated to the subsurface icy layers \cite{Gany_SRS}. The coherent echoes backscattered from the subsurface interfaces within each resolution cell (defined by the along-track and across-track resolutions) are detected by the receiver and visualized in the resulting radargram \cite{Gany_SRS}. Working principle of the \ac{IPR} for \ac{JGO} is shown in figure \ref{fig:IPR_concept}. Off-nadir echo (e.g from point B in figure \ref{fig:IPR_concept}) will reach the antenna at the same time as the subsurface echo thus masking it. 
-So clutter estimation and rejection is done in signal processing for both along track and across track direction.\\
+An \ac{IPR} is an active radar sounding instrument transmitting low frequency electromagnetic waves. The reflected surface and subsurface echoes provide information about the interfaces of different subsurface layers. Thanks to the relatively low frequency and the nadir-looking geometry, only a portion of the transmitted pulse is backscattered from the surface, while a significant part of the pulse is propagated to the subsurface icy layers\cite{Gany_SRS}. The coherent echoes backscattered from the subsurface interfaces within each resolution cell (defined by the along-track and across-track resolutions) are detected by the receiver and visualized in the resulting radargram\cite{Gany_SRS}. Working principle of the \ac{IPR} for \ac{JGO} is shown in figure \ref{fig:IPR_concept}. Off-nadir echo (e.g from point B in figure \ref{fig:IPR_concept}) will reach the antenna at the same time as the subsurface echo thus masking it. Therefore, clutter estimation and rejection is done in signal processing for both along track and across track direction.\\
 %
 \begin{figure}[bht]
 \centering
@@ -74,7 +73,7 @@ The radar frequency determines the penetration capability of the radar, while th
 \label{fig:Jovian_radio_emission}
 \end{figure}
 %
-\subsubsection{Pulse repetition frequency and pulse width}
+\subsubsection{Pulse Repetition Frequency and Pulse Width}
 The pulse width for the \ac{IPR} is $85 \mathrm{~\mu s} $ and \ac{PRI} is $1038 \mathrm{~\mu s}$; giving a duty cycle of $8.2\% $. This results in a \ac{PRF} of $963.39$~Hz. All these timings are shown in figure \ref{fig:PRI}. A receiving window of $165 \mathrm{~\mu s}$ is dedicated to receive the radar echoes. The size of the receiving window is calculated by adding a two way travel time in ice for $5$~km depth ($60 \mathrm{~\mu s}$), the chirp signal duration ($85\mathrm{~\mu s}$) and  a safety margin of $10 \mathrm{~\mu s}$ on each sides. The speed of the electromagnetic waves is reduced by a factor of $1.7$ in ice. A switching time of $177 \mathrm{~\mu s}$ from transmission to reception mode is incorporated as utilized in the \ac{SHARAD} design \cite{SHARAD}.
 %
 \begin{figure}[bht]
@@ -85,8 +84,7 @@ The pulse width for the \ac{IPR} is $85 \mathrm{~\mu s} $ and \ac{PRI} is $1038 
 \end{figure}
 %
 \subsubsection{Ground Resolution}
-
-
+%
 The resolution of the system is determined by the nature of the target. Over specular surfaces (at the length scale of wavelength), where coherent reflection can be assumed, the resolution becomes that of the ``Fresnel circle'' which is 1633 m calculated using equation \ref{eq:fresenel_circle} from \cite{SHARAD}.
 \begin{equation}
 D_{f} = \sqrt{2h\lambda}
@@ -116,9 +114,9 @@ N = T_{i,eff}PRF
 \end{equation}
 %
 \subsubsection{Signal-to-Noise Ratio}
-
+%
 The power of the received echo is estimated from the classical radar equation. Using the \ac{IPR} design parameters from table \ref{tab:parameter}, the expected power level of the surface echo is calculated. Here, two processing gains are exploited; one chirp processing gain of $29.3$~dB given by equation \ref{eq:chirp gain} and a second synthetic aperture processing gain of $28$~dB given by equation \ref{eq:Number_pulses}. So after incorporating the processing gain, the signal power from the Ganymede surface is given by equation \ref{eq:radar_basic} which is about $-91.7$~dB
-
+%
 \begin{equation}
 Pr_{s} = \dfrac{P_{t}\lambda^{2}G^{2}(\frac{D_{pl}}{2})^{2}\sigma_{o}}{(4\pi)^{3}h^{4}} 
 	  = -91.7 \mathrm{~dB} 
@@ -126,11 +124,15 @@ Pr_{s} = \dfrac{P_{t}\lambda^{2}G^{2}(\frac{D_{pl}}{2})^{2}\sigma_{o}}{(4\pi)^{3
 \end{equation}
 where $P_{t}$ is the transmitted power, $Pr_{s}$ is the surface echo strength $\lambda$ is the wavelength  and $\sigma_{o}$ is the reflection coefficient of the target surface and is a statistical quantity which depends upon the dielectric properties of the two mediums at the interface and can be approximated by the Kirchhoff model \cite{MIMOSA} and for space/ice interface it is equal to $-10$~dB.\\
 %
+<<<<<<< HEAD
 
 Then signal attenuation inside ice is estimated. Loss tangent from which the dielectric absorption is calculated depends upon the electromagnetic wave frequency and the temperature of the ice \cite{MIMOSA}. Assuming Ganymede surface temperature of 120 K and a slow linear increase of about 10 K within the first 5-km depth, Lorenzo \cite{Gany_SRS} calculated the attenuation of the radar signal for 20 MHz and 50 MHz. Interpolating the result for 45 MHz frequency, the attenuation is $1.2 dB per Km$ giving $12 dB$ loss for two way traversing of radar signal in 5 Km depth. Using the a transmission coefficient of $-4.5 dB$ of the first surface, any echo after travelling $5 Km $ distance will be $99.2 dB$ plus the reflection coefficient of the subsurface layer as given by equation \ref{eq:signal_strength}. The reflection coefficient estimated from the Kirkhhoff models for ice/rock and ice/water interfaces are $-11 dB$ and $-3 dB$ respectively which is expected for  crater and slush situation as explained in scientific section.
 
 Then the signal attenuation inside ice is estimated. The loss tangent from which the dielectric absorption is calculated depends upon the electromagnetic wave frequency and the temperature of the ice \cite{MIMOSA}. Assuming Ganymede's surface temperature to be 120 K and a slow linear increasing with depth of about 10 K within the first 5~km depth\cite{Gany_SRS}, the calculated attenuation of the radar signal for 20 MHz and 50 MHz. Interpolating the result for 45 MHz frequency, the attenuation is $1.2 \mathrm{~dB~per~km}$ giving $12$~dB loss for two way traversing of radar signal in 5~km depth. So any echo after travelling 5~km distance will be $103.7$~dB plus the reflection coefficient of the subsurface layer as given by equation \ref{eq:signal_strength}. The reflection coefficient estimated from the Kirchhoff models for ice/rock and ice/water interfaces are $-11$~dB and -3~dB respectively which is expected for  crater and slush situation as explained in section \ref{sub:volcanism}.
 
+=======
+Then the signal attenuation inside ice is estimated. The loss tangent from which the dielectric absorption is calculated depends upon the electromagnetic wave frequency and the temperature of the ice \cite{MIMOSA}. Assuming Ganymede's surface temperature to be 120 K and a slow linear increasing with depth of about 10 K within the first 5~km depth Lorenzo\cite{Gany_SRS} calculated the attenuation of the radar signal for 20 MHz and 50 MHz. Interpolating the result for 45 MHz frequency, the attenuation is $1.2 \mathrm{~dB~per~km}$ giving $12$~dB loss for two way traversing of radar signal in 5~km depth. So any echo after travelling 5~km distance will be $103.7$~dB plus the reflection coefficient of the subsurface layer as given by equation \ref{eq:signal_strength}. The reflection coefficient estimated from the Kirchhoff models for ice/rock and ice/water interfaces are $-11$~dB and -3~dB respectively which is expected for  crater and slush situation as explained in section \ref{sub:volcanism}.
+>>>>>>> 81f90908c079196b09b3e47fdc24bda44938b712
 %
 \begin{equation}
 Pr_{ss} = -99.2 \mathrm{~dB} + 10 \log \sigma_{oss}
@@ -143,14 +145,16 @@ N_{g} = K_{B}T_{g}B_{w}
 \label{eq:galactic_noise}
 \end{equation}
 \\
-
-
+%
+%
 \subsubsection{Clutter Rejection and Synthetic Aperture Processing}
 \label{SAR}
 As the directivity of the dipole antenna is quite low, it will illuminate a large surface area of the target. This will result in echoes coming from the off-nadir along with nadir direction as shown in figure \ref{fig:IPR_concept}. This off-nadir echoes called clutter can be divided into two parts; along the track clutter and across the track clutter.\\
 %
-Along the track clutter will be removed by the synthetic aperture processing technique which uses the relative motion between the spacecraft and target to synthesize a large aperture which is equal to the space covered during the integration time. As the \ac{IPR} is a coherent radar, it measures and records the phase history of the received signals. In order to reduce on board computation and downlink data rate, Doppler processing is chosen unfocused and moreover following the \ac{MARSIS} approach i.e., requiring that the signal phase variation during a synthetic aperture is smaller than $\pi/4$, the phase compensation of the echoes during the formation of a synthetic aperture is simpler and can be performed on board in real time as only a linear phase compensation of the echoes is required \cite{Gany_SRS}. To ensure that only coherently resolved echoes from a contiguous Fresnel zone are being illuminated, the maximum along track integration distance is limited to the Fresnel zone given by equation \ref{eq:fresenel_circle}.
+Along the track clutter will be removed by the synthetic aperture processing technique which uses the relative motion between the spacecraft and target to synthesize a large aperture which is equal to the space covered during the integration time. As the \ac{IPR} is a coherent radar, it measures and records the phase history of the received signals. In order to reduce on board computation and downlink data rate, Doppler processing is chosen unfocused and moreover following the \ac{MARSIS} approach i.e., requiring that the signal phase variation during a synthetic aperture is smaller than $\pi/4$, the phase compensation of the echoes during the formation of a synthetic aperture is simpler and can be performed on board in real time as only a linear phase compensation of the echoes is required \cite{Gany_SRS}. To ensure that only coherently resolved echoes from a contiguous Fresnel zone are being illuminated, the maximum along track integration distance is limited to the Fresnel zone given by equation \ref{eq:
+fresenel_circle}.
 \\
 Across the track clutter is limited by the antenna pattern and will be removed by developing a simulator of the radar using a model of the overflown surface (accurately modelled at the scale of interest), which predicts the presence of clutter echoes. In this way, the corresponding echoes appearing in the measured radar-gram can be properly interpreted as clutter and then be neglected \cite{SHARAD}. Some information for Ganymede was obtained through a \ac{DEM} produced from Voyager images. However, this is not enough  for deriving \acp{DEM} of different portions of Ganymede for a better understanding of the clutter issue \cite{Gany_SRS}. As the instrument package of the \ac{JGO} mission includes radar altimeter so after modelling the Ganeymede surface, across the track clutter will be removed.
-\subsection{Design feasibility}
+%
+\subsection{Design Feasibility}
 The \ac{IPR} for the \ac{JGO} system is based on a mature and experienced technology that has flight heritage for two different Mars Missions (MARS Express, with the \ac{MARSIS} instrument; NASA Reconnaissance Orbiter with \ac{SHARAD} with slight variations to fullfill  the mission objectives of the \ac{JGO}. From the link budget analysis, it is obvious that we have enough margin to detect the sub layer echoes.  Thus the \ac{IPR} is capable of fullfilling the scientific objectives for the first 5~km surface depth of Ganymede.
